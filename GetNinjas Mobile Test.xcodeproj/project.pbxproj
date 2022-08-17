@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		3A79BF3928AB3C8400E1BB41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79BF3828AB3C8400E1BB41 /* AppDelegate.swift */; };
 		3A79BF3B28AB3C8400E1BB41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79BF3A28AB3C8400E1BB41 /* SceneDelegate.swift */; };
-		3A79BF3D28AB3C8400E1BB41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79BF3C28AB3C8400E1BB41 /* ViewController.swift */; };
+		3A79BF3D28AB3C8400E1BB41 /* JobOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79BF3C28AB3C8400E1BB41 /* JobOffersViewController.swift */; };
 		3A79BF4028AB3C8400E1BB41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A79BF3E28AB3C8400E1BB41 /* Main.storyboard */; };
 		3A79BF4228AB3C8800E1BB41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A79BF4128AB3C8800E1BB41 /* Assets.xcassets */; };
 		3A79BF4528AB3C8800E1BB41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A79BF4328AB3C8800E1BB41 /* LaunchScreen.storyboard */; };
+		3AC2F14328AC6BC700274C75 /* OffersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14228AC6BC700274C75 /* OffersViewModel.swift */; };
+		3AC2F14528AC6F1900274C75 /* Offers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14428AC6F1900274C75 /* Offers.swift */; };
+		3AC2F14728AC7AE200274C75 /* Entrypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14628AC7AE200274C75 /* Entrypoint.swift */; };
+		3AC2F14928AC7CB800274C75 /* Leads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14828AC7CB800274C75 /* Leads.swift */; };
+		3AEDB3B528ABCA4F0092C455 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDB3B428ABCA4F0092C455 /* DetailsViewController.swift */; };
+		3AEDB3B828ABCC360092C455 /* JobOffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDB3B628ABCC360092C455 /* JobOffersTableViewCell.swift */; };
+		3AEDB3B928ABCC360092C455 /* JobOffersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDB3B728ABCC360092C455 /* JobOffersTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A79BF3528AB3C8400E1BB41 /* GetNinjas Mobile Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GetNinjas Mobile Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A79BF3828AB3C8400E1BB41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A79BF3A28AB3C8400E1BB41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A79BF3C28AB3C8400E1BB41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A79BF3C28AB3C8400E1BB41 /* JobOffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOffersViewController.swift; sourceTree = "<group>"; };
 		3A79BF3F28AB3C8400E1BB41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A79BF4128AB3C8800E1BB41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A79BF4428AB3C8800E1BB41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A79BF4628AB3C8800E1BB41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC2F14228AC6BC700274C75 /* OffersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewModel.swift; sourceTree = "<group>"; };
+		3AC2F14428AC6F1900274C75 /* Offers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offers.swift; sourceTree = "<group>"; };
+		3AC2F14628AC7AE200274C75 /* Entrypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrypoint.swift; sourceTree = "<group>"; };
+		3AC2F14828AC7CB800274C75 /* Leads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leads.swift; sourceTree = "<group>"; };
+		3AEDB3B428ABCA4F0092C455 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3AEDB3B628ABCC360092C455 /* JobOffersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOffersTableViewCell.swift; sourceTree = "<group>"; };
+		3AEDB3B728ABCC360092C455 /* JobOffersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobOffersTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +72,52 @@
 			children = (
 				3A79BF3828AB3C8400E1BB41 /* AppDelegate.swift */,
 				3A79BF3A28AB3C8400E1BB41 /* SceneDelegate.swift */,
-				3A79BF3C28AB3C8400E1BB41 /* ViewController.swift */,
+				3AEDB3B128ABB8330092C455 /* Model */,
+				3AEDB3B228ABB8490092C455 /* View */,
+				3AEDB3B328ABB8590092C455 /* ViewModel */,
+				3AEDB3BA28ABCCD30092C455 /* Supporting Files */,
+			);
+			path = "GetNinjas Mobile Test";
+			sourceTree = "<group>";
+		};
+		3AEDB3B128ABB8330092C455 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AC2F14428AC6F1900274C75 /* Offers.swift */,
+				3AC2F14628AC7AE200274C75 /* Entrypoint.swift */,
+				3AC2F14828AC7CB800274C75 /* Leads.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AEDB3B228ABB8490092C455 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A79BF3C28AB3C8400E1BB41 /* JobOffersViewController.swift */,
+				3AEDB3B428ABCA4F0092C455 /* DetailsViewController.swift */,
+				3AEDB3B628ABCC360092C455 /* JobOffersTableViewCell.swift */,
+				3AEDB3B728ABCC360092C455 /* JobOffersTableViewCell.xib */,
 				3A79BF3E28AB3C8400E1BB41 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3AEDB3B328ABB8590092C455 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3AC2F14228AC6BC700274C75 /* OffersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AEDB3BA28ABCCD30092C455 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				3A79BF4128AB3C8800E1BB41 /* Assets.xcassets */,
 				3A79BF4328AB3C8800E1BB41 /* LaunchScreen.storyboard */,
 				3A79BF4628AB3C8800E1BB41 /* Info.plist */,
 			);
-			path = "GetNinjas Mobile Test";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +180,7 @@
 			files = (
 				3A79BF4528AB3C8800E1BB41 /* LaunchScreen.storyboard in Resources */,
 				3A79BF4228AB3C8800E1BB41 /* Assets.xcassets in Resources */,
+				3AEDB3B928ABCC360092C455 /* JobOffersTableViewCell.xib in Resources */,
 				3A79BF4028AB3C8400E1BB41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +192,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A79BF3D28AB3C8400E1BB41 /* ViewController.swift in Sources */,
+				3AC2F14528AC6F1900274C75 /* Offers.swift in Sources */,
+				3AEDB3B828ABCC360092C455 /* JobOffersTableViewCell.swift in Sources */,
+				3A79BF3D28AB3C8400E1BB41 /* JobOffersViewController.swift in Sources */,
+				3AC2F14928AC7CB800274C75 /* Leads.swift in Sources */,
 				3A79BF3928AB3C8400E1BB41 /* AppDelegate.swift in Sources */,
 				3A79BF3B28AB3C8400E1BB41 /* SceneDelegate.swift in Sources */,
+				3AEDB3B528ABCA4F0092C455 /* DetailsViewController.swift in Sources */,
+				3AC2F14328AC6BC700274C75 /* OffersViewModel.swift in Sources */,
+				3AC2F14728AC7AE200274C75 /* Entrypoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
