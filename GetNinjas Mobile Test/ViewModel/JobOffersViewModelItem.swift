@@ -8,7 +8,7 @@
 import Foundation
 
 enum OffersState {
-    case invalid
+    case accepted
     case read
     case unread
 }

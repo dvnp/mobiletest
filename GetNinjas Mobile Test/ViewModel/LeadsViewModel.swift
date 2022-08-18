@@ -41,7 +41,7 @@ extension LeadsViewModel: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
             if let leads = leads?.leads {
                 let lead = leads[indexPath.row]
-                cell.item = JobOffersViewModelItem(state: .invalid,
+                cell.item = JobOffersViewModelItem(state: .accepted,
                                                    title: lead.embedded.request.title,
                                                    createdAt: lead.createdAt,
                                                    name: lead.embedded.user.name,

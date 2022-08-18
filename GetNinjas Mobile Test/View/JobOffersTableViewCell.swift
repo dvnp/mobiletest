@@ -37,7 +37,7 @@ class JobOffersTableViewCell: UITableViewCell {
             nameLabel.text = item.name
             addressLabel.text = String("\(item.neighborhood) - \(item.city)")
             switch item.state {
-            case .invalid:
+            case .accepted:
                 personIcon.image = UIImage(systemName: "person.circle")
                 dateIcon.image = UIImage(systemName: "person.circle")
                 addressIcon.image = UIImage(systemName: "map.circle")
