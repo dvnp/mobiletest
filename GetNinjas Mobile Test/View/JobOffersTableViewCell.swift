@@ -19,13 +19,7 @@ class JobOffersTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            // Make it card-like
-            containerView.layer.cornerRadius = 10
-            containerView.layer.shadowOpacity = 1
-            containerView.layer.shadowRadius = 2
-            containerView.layer.shadowColor = UIColor(named: "Orange")?.cgColor
-            containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
-            //containerView.backgroundColor = UIColor(named: "Red")
+            containerView.layer.cornerRadius = 20
         }
     }
     
@@ -70,20 +64,6 @@ class JobOffersTableViewCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        personIcon.layer.cornerRadius = 40
-//        personIcon.clipsToBounds = true
-//        personIcon.contentMode = .scaleAspectFit
-//        personIcon.backgroundColor = UIColor.lightGray
-//    }
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        //personIcon.image = nil
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

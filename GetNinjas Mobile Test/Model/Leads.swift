@@ -7,11 +7,6 @@
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let leads = try? newJSONDecoder().decode(Leads.self, from: jsonData)
-
 // MARK: - Leads
 struct Leads: Codable {
     let leads: [Lead]
@@ -61,20 +56,6 @@ struct User: Codable {
     let name: String
     let email: String?
 }
-
-//// MARK: - Links
-//struct Links: Codable {
-//    let linksSelf: SelfClass
-//
-//    enum CodingKeys: String, CodingKey {
-//        case linksSelf = "self"
-//    }
-//}
-
-//// MARK: - SelfClass
-//struct SelfClass: Codable {
-//    let href: String
-//}
 
 extension Leads {
     

@@ -7,11 +7,6 @@
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let offers = try? newJSONDecoder().decode(Offers.self, from: jsonData)
-
 // MARK: - Offers
 struct Offers: Codable {
     let offers: [Offer]
@@ -73,16 +68,6 @@ struct RequestEmbedded: Codable {
     let user: User
     let address: Address
 }
-
-//// MARK: - Address
-//struct Address: Codable {
-//    let city, neighborhood, uf: String
-//}
-
-//// MARK: - User
-//struct User: Codable {
-//    let name: String
-//}
 
 extension Offers {
     
