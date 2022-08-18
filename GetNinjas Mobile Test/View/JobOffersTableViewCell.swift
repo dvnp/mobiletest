@@ -17,6 +17,18 @@ class JobOffersTableViewCell: UITableViewCell {
     @IBOutlet weak var addressIcon: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            // Make it card-like
+            containerView.layer.cornerRadius = 10
+            containerView.layer.shadowOpacity = 1
+            containerView.layer.shadowRadius = 2
+            containerView.layer.shadowColor = UIColor(named: "Orange")?.cgColor
+            containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
+            //containerView.backgroundColor = UIColor(named: "Red")
+        }
+    }
+    
     var item: DataViewModelItem? {
         didSet {
             guard let item = item else {
@@ -25,6 +37,20 @@ class JobOffersTableViewCell: UITableViewCell {
             titleLabel.text = item.title
             nameLabel.text = item.name
             addressLabel.text = String("\(item.neighborhood) - \(item.city)")
+            switch item.state {
+            case .invalid:
+                personIcon.image = UIImage(systemName: "person.circle")
+                dateIcon.image = UIImage(systemName: "person.circle")
+                addressIcon.image = UIImage(systemName: "map.circle")
+            case .read:
+                personIcon.image = UIImage(systemName: "person.fill")
+                dateIcon.image = UIImage(systemName: "person.fill")
+                addressIcon.image = UIImage(systemName: "map.fill")
+            case .unread:
+                personIcon.image = UIImage(systemName: "person")
+                dateIcon.image = UIImage(systemName: "person")
+                addressIcon.image = UIImage(systemName: "map")
+            }
 
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"

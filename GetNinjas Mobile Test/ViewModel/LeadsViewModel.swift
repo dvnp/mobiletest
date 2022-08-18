@@ -41,7 +41,7 @@ extension LeadsViewModel: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
             if let leads = leads?.leads {
                 let lead = leads[indexPath.row]
-                cell.item = DataViewModelItem(state: "",
+                cell.item = DataViewModelItem(state: .invalid,
                                               title: lead.embedded.request.title,
                                               createdAt: lead.createdAt,
                                               name: lead.embedded.user.name,
@@ -50,6 +50,7 @@ extension LeadsViewModel: UITableViewDataSource {
                                               street: lead.embedded.address.street,
                                               neighborhood: lead.embedded.address.neighborhood,
                                               uf: lead.embedded.address.uf)
+                cell.contentView.backgroundColor = UIColor.systemCyan
             }
             return cell
         }

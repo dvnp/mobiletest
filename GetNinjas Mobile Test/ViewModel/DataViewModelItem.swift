@@ -7,8 +7,14 @@
 
 import Foundation
 
+enum OffersState {
+    case invalid
+    case read
+    case unread
+}
+
 struct DataViewModelItem {
-    var state: String
+    var state: OffersState
     let title: String
     let createdAt: String
     let name: String

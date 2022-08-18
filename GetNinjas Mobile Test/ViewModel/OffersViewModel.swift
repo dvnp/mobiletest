@@ -41,7 +41,7 @@ extension OffersViewModel: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
             if let offers = offers?.offers {
                 let offer = offers[indexPath.row]
-                cell.item = DataViewModelItem(state: offer.state,
+                cell.item = DataViewModelItem(state: offer.state == "read" ? .read : .unread,
                                               title: offer.embedded.request.title,
                                               createdAt: offer.embedded.request.createdAt,
                                               name: offer.embedded.request.embedded.user.name,
@@ -50,6 +50,7 @@ extension OffersViewModel: UITableViewDataSource {
                                               street: "",
                                               neighborhood: offer.embedded.request.embedded.address.neighborhood,
                                               uf: offer.embedded.request.embedded.address.uf)
+                cell.contentView.backgroundColor = UIColor.systemCyan
             }
             return cell
         }
