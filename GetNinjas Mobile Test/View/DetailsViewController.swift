@@ -9,10 +9,13 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    //@IBOutlet weak var navigationItem: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //navigationItem.titleView?.backgroundColor = UIColor.white
+        navigationItem.titleView?.backgroundColor = UIColor.white
     }
     
 

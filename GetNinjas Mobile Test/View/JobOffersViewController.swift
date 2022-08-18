@@ -22,12 +22,20 @@ class JobOffersViewController: UIViewController {
         super.viewDidLoad()
 
         jobOffersTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
+        
         jobOffersTableView.dataSource = offersViewModel
+        jobOffersTableView.delegate = self
     }
 
     @IBAction func segmentedControlActionChanged(_ sender: UISegmentedControl) {
         jobOffersTableView.dataSource = sender.selectedSegmentIndex == 0 ? offersViewModel : leadsViewModel
         jobOffersTableView.reloadData()
     }
-    
+}
+
+extension JobOffersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(jobOffersSegmentedControl.selectedSegmentIndex) -> \(indexPath.row)")
+        self.performSegue(withIdentifier: "detailsSegue", sender: nil)
+    }
 }
