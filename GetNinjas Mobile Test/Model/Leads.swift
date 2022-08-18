@@ -75,3 +75,31 @@ struct User: Codable {
 //struct SelfClass: Codable {
 //    let href: String
 //}
+
+extension Leads {
+    
+    // MARK: - Gets Leads list
+
+    static func loadLeads(urlString: String) async -> Leads? {
+        guard var components = URLComponents(string: urlString) else {
+            return nil
+        }
+        components.scheme = "https"
+        guard let url = components.url else {
+            return nil
+        }
+
+        let session = URLSession.shared
+
+        do {
+            let (data, _) = try await session.data(from: url)
+
+            let leads = try? JSONDecoder().decode(Leads.self, from: data)
+            return leads
+        } catch {
+            print(error)
+        }
+        
+        return nil
+    }
+}

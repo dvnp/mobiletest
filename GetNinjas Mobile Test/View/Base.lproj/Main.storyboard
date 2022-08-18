@@ -20,15 +20,18 @@
                                 <rect key="frame" x="0.0" y="202" width="414" height="660"/>
                                 <color key="backgroundColor" red="0.0" green="0.62920035323699797" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-YU-edD">
-                                <rect key="frame" x="0.0" y="142" width="414" height="61"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-YU-edD">
+                                <rect key="frame" x="22" y="142" width="370" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="BWk-xv-DjV"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="DISPONÍVEIS"/>
+                                    <segment title="ACEITOS"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlActionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2jp-GP-2TM"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -39,12 +42,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IB8-Xs-0Qs" secondAttribute="trailing" id="Gyc-DK-ZRa"/>
                             <constraint firstItem="IB8-Xs-0Qs" firstAttribute="top" secondItem="cs7-YU-edD" secondAttribute="bottom" id="Q46-E3-3ET"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IB8-Xs-0Qs" secondAttribute="bottom" id="enA-f3-KmS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cs7-YU-edD" secondAttribute="trailing" id="wY8-Da-4De"/>
-                            <constraint firstItem="cs7-YU-edD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yUe-hx-bhd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cs7-YU-edD" secondAttribute="trailingMargin" constant="30" id="wY8-Da-4De"/>
+                            <constraint firstItem="cs7-YU-edD" firstAttribute="leadingMargin" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="yUe-hx-bhd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pedidos" id="VNm-lD-H7X"/>
                     <connections>
+                        <outlet property="jobOffersSegmentedControl" destination="cs7-YU-edD" id="cxN-xo-X5X"/>
                         <outlet property="jobOffersTableView" destination="IB8-Xs-0Qs" id="Dr3-EH-baB"/>
                         <segue destination="JSP-KL-2g0" kind="show" identifier="goToDetails" id="wqh-Ax-LIA"/>
                     </connections>

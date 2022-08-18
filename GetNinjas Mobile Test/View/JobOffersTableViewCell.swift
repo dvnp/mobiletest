@@ -17,14 +17,14 @@ class JobOffersTableViewCell: UITableViewCell {
     @IBOutlet weak var addressIcon: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     
-    var item: OffersViewModelItem? {
+    var item: DataViewModelItem? {
         didSet {
             guard let item = item else {
                 return
             }
             titleLabel.text = item.title
-            nameLabel.text = item.userName
-            addressLabel.text = String("\(item.addressNeighborhood) - \(item.addressCity)")
+            nameLabel.text = item.name
+            addressLabel.text = String("\(item.neighborhood) - \(item.city)")
 
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
