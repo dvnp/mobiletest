@@ -13,7 +13,7 @@ enum OffersState {
     case unread
 }
 
-struct DataViewModelItem {
+struct JobOffersViewModelItem {
     var state: OffersState
     let title: String
     let createdAt: String

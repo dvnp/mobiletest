@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - EntryPoint
-struct EntryPoint: Codable {
-    let links: LinksEntryPoint
+struct Entrypoint: Codable {
+    let links: LinksEntrypoint
 
     enum CodingKeys: String, CodingKey {
         case links = "_links"
@@ -17,32 +17,38 @@ struct EntryPoint: Codable {
 }
 
 // MARK: - Links
-struct LinksEntryPoint: Codable {
-    let leads, offers: LeadsEntryPoint
+struct LinksEntrypoint: Codable {
+    let leads, offers: LeadsEntrypoint
 }
 
 // MARK: - LeadsEntryPoint
-struct LeadsEntryPoint: Codable {
+struct LeadsEntrypoint: Codable {
     let href: String
 }
 
-extension EntryPoint {
+extension Entrypoint {
     
-    // MARK: - Entrypoint URI
-    static let urlString = "https://testemobile.getninjas.com.br"
+    // MARK: - The entrypoint URI
+    static let URL = "http://testemobile.getninjas.com.br"
 
     // MARK: - Gets the entrypoint
 
-    static func loadEntryPoint() async -> EntryPoint? {
-        let url: URL = URL(string: urlString)!
+    static func loadEntrypoint() async -> Entrypoint? {
+        guard var components = URLComponents(string: URL) else {
+            return nil
+        }
+        components.scheme = "https"
+        guard let url = components.url else {
+            return nil
+        }
 
         let session = URLSession.shared
 
         do {
             let (data, _) = try await session.data(from: url)
 
-            let entryPoint = try? JSONDecoder().decode(EntryPoint.self, from: data)
-            return entryPoint
+            let entrypoint = try? JSONDecoder().decode(self, from: data)
+            return entrypoint
         } catch {
             print(error)
         }

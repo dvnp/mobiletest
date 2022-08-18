@@ -59,10 +59,10 @@ struct User: Codable {
 
 extension Leads {
     
-    // MARK: - Gets Leads list
+    // MARK: - Gets leads list
 
-    static func loadLeads(urlString: String) async -> Leads? {
-        guard var components = URLComponents(string: urlString) else {
+    static func loadLeads(url: String) async -> Leads? {
+        guard var components = URLComponents(string: url) else {
             return nil
         }
         components.scheme = "https"
@@ -75,7 +75,7 @@ extension Leads {
         do {
             let (data, _) = try await session.data(from: url)
 
-            let leads = try? JSONDecoder().decode(Leads.self, from: data)
+            let leads = try? JSONDecoder().decode(self, from: data)
             return leads
         } catch {
             print(error)

@@ -20,10 +20,15 @@ class JobOffersTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 20
+            containerView.layer.shadowOpacity = 0.5
+            containerView.layer.shadowRadius = 2.5
+            containerView.layer.shadowOffset = CGSize(width: 2, height: 2)
+
+            contentView.backgroundColor = UIColor.systemCyan
         }
     }
     
-    var item: DataViewModelItem? {
+    var item: JobOffersViewModelItem? {
         didSet {
             guard let item = item else {
                 return

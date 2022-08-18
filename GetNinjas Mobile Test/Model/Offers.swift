@@ -71,10 +71,10 @@ struct RequestEmbedded: Codable {
 
 extension Offers {
     
-    // MARK: - Gets Offers list
+    // MARK: - Gets offers list
 
-    static func loadOffers(urlString: String) async -> Offers? {
-        guard var components = URLComponents(string: urlString) else {
+    static func loadOffers(url: String) async -> Offers? {
+        guard var components = URLComponents(string: url) else {
             return nil
         }
         components.scheme = "https"
@@ -87,7 +87,7 @@ extension Offers {
         do {
             let (data, _) = try await session.data(from: url)
 
-            let offers = try? JSONDecoder().decode(Offers.self, from: data)
+            let offers = try? JSONDecoder().decode(self, from: data)
             return offers
         } catch {
             print(error)

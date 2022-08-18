@@ -14,11 +14,11 @@ class OffersViewModel: NSObject {
         super.init()
 
         Task {
-            guard let entryPoint = await EntryPoint.loadEntryPoint() else {
+            guard let entryPoint = await Entrypoint.loadEntrypoint() else {
                 return
             }
             
-            offers = await Offers.loadOffers(urlString: entryPoint.links.offers.href)
+            offers = await Offers.loadOffers(url: entryPoint.links.offers.href)
         }
     }
 }
@@ -41,16 +41,16 @@ extension OffersViewModel: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
             if let offers = offers?.offers {
                 let offer = offers[indexPath.row]
-                cell.item = DataViewModelItem(state: offer.state == "read" ? .read : .unread,
-                                              title: offer.embedded.request.title,
-                                              createdAt: offer.embedded.request.createdAt,
-                                              name: offer.embedded.request.embedded.user.name,
-                                              email: "",
-                                              city: offer.embedded.request.embedded.address.city,
-                                              street: "",
-                                              neighborhood: offer.embedded.request.embedded.address.neighborhood,
-                                              uf: offer.embedded.request.embedded.address.uf)
-                cell.contentView.backgroundColor = UIColor.systemCyan
+                cell.item = JobOffersViewModelItem(state: offer.state == "read" ? .read : .unread,
+                                                   title: offer.embedded.request.title,
+                                                   createdAt: offer.embedded.request.createdAt,
+                                                   name: offer.embedded.request.embedded.user.name,
+                                                   email: "",
+                                                   city: offer.embedded.request.embedded.address.city,
+                                                   street: "",
+                                                   neighborhood: offer.embedded.request.embedded.address.neighborhood,
+                                                   uf: offer.embedded.request.embedded.address.uf)
+                //cell.contentView.backgroundColor = UIColor.systemCyan
             }
             return cell
         }

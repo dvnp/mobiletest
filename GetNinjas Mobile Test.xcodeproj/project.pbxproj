@@ -18,7 +18,9 @@
 		3AC2F14728AC7AE200274C75 /* Entrypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14628AC7AE200274C75 /* Entrypoint.swift */; };
 		3AC2F14928AC7CB800274C75 /* Leads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14828AC7CB800274C75 /* Leads.swift */; };
 		3AC2F14B28ADB2D400274C75 /* LeadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14A28ADB2D400274C75 /* LeadsViewModel.swift */; };
-		3AC2F14D28ADBA2500274C75 /* DataViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14C28ADBA2500274C75 /* DataViewModelItem.swift */; };
+		3AC2F14D28ADBA2500274C75 /* JobOffersViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14C28ADBA2500274C75 /* JobOffersViewModelItem.swift */; };
+		3AC2F14F28AE404900274C75 /* LeadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F14E28AE404900274C75 /* LeadInfo.swift */; };
+		3AC2F15128AE445300274C75 /* OfferInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2F15028AE445300274C75 /* OfferInfo.swift */; };
 		3AEDB3B528ABCA4F0092C455 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDB3B428ABCA4F0092C455 /* DetailsViewController.swift */; };
 		3AEDB3B828ABCC360092C455 /* JobOffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEDB3B628ABCC360092C455 /* JobOffersTableViewCell.swift */; };
 		3AEDB3B928ABCC360092C455 /* JobOffersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEDB3B728ABCC360092C455 /* JobOffersTableViewCell.xib */; };
@@ -38,7 +40,9 @@
 		3AC2F14628AC7AE200274C75 /* Entrypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrypoint.swift; sourceTree = "<group>"; };
 		3AC2F14828AC7CB800274C75 /* Leads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leads.swift; sourceTree = "<group>"; };
 		3AC2F14A28ADB2D400274C75 /* LeadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsViewModel.swift; sourceTree = "<group>"; };
-		3AC2F14C28ADBA2500274C75 /* DataViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModelItem.swift; sourceTree = "<group>"; };
+		3AC2F14C28ADBA2500274C75 /* JobOffersViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOffersViewModelItem.swift; sourceTree = "<group>"; };
+		3AC2F14E28AE404900274C75 /* LeadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadInfo.swift; sourceTree = "<group>"; };
+		3AC2F15028AE445300274C75 /* OfferInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferInfo.swift; sourceTree = "<group>"; };
 		3AEDB3B428ABCA4F0092C455 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		3AEDB3B628ABCC360092C455 /* JobOffersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOffersTableViewCell.swift; sourceTree = "<group>"; };
 		3AEDB3B728ABCC360092C455 /* JobOffersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobOffersTableViewCell.xib; sourceTree = "<group>"; };
@@ -87,9 +91,11 @@
 		3AEDB3B128ABB8330092C455 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3AC2F14428AC6F1900274C75 /* Offers.swift */,
 				3AC2F14628AC7AE200274C75 /* Entrypoint.swift */,
+				3AC2F14428AC6F1900274C75 /* Offers.swift */,
 				3AC2F14828AC7CB800274C75 /* Leads.swift */,
+				3AC2F15028AE445300274C75 /* OfferInfo.swift */,
+				3AC2F14E28AE404900274C75 /* LeadInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,7 +117,7 @@
 			children = (
 				3AC2F14228AC6BC700274C75 /* OffersViewModel.swift */,
 				3AC2F14A28ADB2D400274C75 /* LeadsViewModel.swift */,
-				3AC2F14C28ADBA2500274C75 /* DataViewModelItem.swift */,
+				3AC2F14C28ADBA2500274C75 /* JobOffersViewModelItem.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -205,9 +211,11 @@
 				3AC2F14928AC7CB800274C75 /* Leads.swift in Sources */,
 				3A79BF3928AB3C8400E1BB41 /* AppDelegate.swift in Sources */,
 				3A79BF3B28AB3C8400E1BB41 /* SceneDelegate.swift in Sources */,
+				3AC2F14F28AE404900274C75 /* LeadInfo.swift in Sources */,
 				3AEDB3B528ABCA4F0092C455 /* DetailsViewController.swift in Sources */,
+				3AC2F15128AE445300274C75 /* OfferInfo.swift in Sources */,
 				3AC2F14328AC6BC700274C75 /* OffersViewModel.swift in Sources */,
-				3AC2F14D28ADBA2500274C75 /* DataViewModelItem.swift in Sources */,
+				3AC2F14D28ADBA2500274C75 /* JobOffersViewModelItem.swift in Sources */,
 				3AC2F14728AC7AE200274C75 /* Entrypoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
