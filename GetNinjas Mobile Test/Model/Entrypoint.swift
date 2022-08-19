@@ -33,7 +33,7 @@ extension Entrypoint {
 
     // MARK: - Gets the entrypoint
 
-    static func loadEntrypoint() async -> Entrypoint? {
+    static func load() async -> Entrypoint? {
         guard var components = URLComponents(string: URL) else {
             return nil
         }

@@ -61,7 +61,7 @@ extension Leads {
     
     // MARK: - Gets leads list
 
-    static func loadLeads(url: String) async -> Leads? {
+    static func load(_ url: String) async -> Leads? {
         guard var components = URLComponents(string: url) else {
             return nil
         }

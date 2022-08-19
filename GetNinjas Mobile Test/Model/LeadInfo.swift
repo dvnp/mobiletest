@@ -27,7 +27,7 @@ extension LeadInfo {
     
     // MARK: - Gets lead info
 
-    static func loadLeads(url: String) async -> LeadInfo? {
+    static func load(_ url: String) async -> LeadInfo? {
         guard var components = URLComponents(string: url) else {
             return nil
         }

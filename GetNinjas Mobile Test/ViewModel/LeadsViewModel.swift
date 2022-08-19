@@ -14,15 +14,14 @@ class LeadsViewModel: NSObject {
         super.init()
 
         Task {
-            guard let entryPoint = await Entrypoint.loadEntrypoint() else {
+            guard let entryPoint = await Entrypoint.load() else {
                 return
             }
             
-            leads = await Leads.loadLeads(url: entryPoint.links.leads.href)
+            leads = await Leads.load(entryPoint.links.leads.href)
         }
     }
 }
-
 
 extension LeadsViewModel: UITableViewDataSource {
 
@@ -38,20 +37,17 @@ extension LeadsViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
-            if let leads = leads?.leads {
-                let lead = leads[indexPath.row]
-                cell.item = JobOffersViewModelItem(state: .accepted,
-                                                   title: lead.embedded.request.title,
-                                                   createdAt: lead.createdAt,
-                                                   name: lead.embedded.user.name,
-                                                   email: lead.embedded.user.email,
-                                                   city: lead.embedded.address.city,
-                                                   street: lead.embedded.address.street,
-                                                   neighborhood: lead.embedded.address.neighborhood,
-                                                   uf: lead.embedded.address.uf)
-                //cell.contentView.backgroundColor = UIColor.systemCyan
-            }
+        if let leads = leads?.leads, let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
+            let lead = leads[indexPath.row]
+            cell.item = JobOffersViewModelItem(state: .accepted,
+                                               title: lead.embedded.request.title,
+                                               createdAt: lead.createdAt,
+                                               name: lead.embedded.user.name,
+                                               email: lead.embedded.user.email,
+                                               city: lead.embedded.address.city,
+                                               street: lead.embedded.address.street,
+                                               neighborhood: lead.embedded.address.neighborhood,
+                                               uf: lead.embedded.address.uf)
             return cell
         }
         return UITableViewCell()

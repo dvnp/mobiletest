@@ -14,15 +14,14 @@ class OffersViewModel: NSObject {
         super.init()
 
         Task {
-            guard let entryPoint = await Entrypoint.loadEntrypoint() else {
+            guard let entryPoint = await Entrypoint.load() else {
                 return
             }
             
-            offers = await Offers.loadOffers(url: entryPoint.links.offers.href)
+            offers = await Offers.load(entryPoint.links.offers.href)
         }
     }
 }
-
 
 extension OffersViewModel: UITableViewDataSource {
 
@@ -38,20 +37,17 @@ extension OffersViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
-            if let offers = offers?.offers {
-                let offer = offers[indexPath.row]
-                cell.item = JobOffersViewModelItem(state: offer.state == "read" ? .read : .unread,
-                                                   title: offer.embedded.request.title,
-                                                   createdAt: offer.embedded.request.createdAt,
-                                                   name: offer.embedded.request.embedded.user.name,
-                                                   email: "",
-                                                   city: offer.embedded.request.embedded.address.city,
-                                                   street: "",
-                                                   neighborhood: offer.embedded.request.embedded.address.neighborhood,
-                                                   uf: offer.embedded.request.embedded.address.uf)
-                //cell.contentView.backgroundColor = UIColor.systemCyan
-            }
+        if let offers = offers?.offers, let cell = tableView.dequeueReusableCell(withIdentifier: JobOffersTableViewCell.identifier, for: indexPath) as? JobOffersTableViewCell {
+            let offer = offers[indexPath.row]
+            cell.item = JobOffersViewModelItem(state: offer.state == "read" ? .read : .unread,
+                                               title: offer.embedded.request.title,
+                                               createdAt: offer.embedded.request.createdAt,
+                                               name: offer.embedded.request.embedded.user.name,
+                                               email: "",
+                                               city: offer.embedded.request.embedded.address.city,
+                                               street: "",
+                                               neighborhood: offer.embedded.request.embedded.address.neighborhood,
+                                               uf: offer.embedded.request.embedded.address.uf)
             return cell
         }
         return UITableViewCell()

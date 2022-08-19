@@ -38,17 +38,18 @@ class JobOffersTableViewCell: UITableViewCell {
             addressLabel.text = String("\(item.neighborhood) - \(item.city)")
             switch item.state {
             case .accepted:
-                personIcon.image = UIImage(systemName: "person.circle")
-                dateIcon.image = UIImage(systemName: "person.circle")
-                addressIcon.image = UIImage(systemName: "map.circle")
+                //personIcon.image = UIImage(systemName: "person.circle")
+                personIcon.tintColor = UIColor.systemGreen
+                dateIcon.tintColor = UIColor.systemGreen
+                addressIcon.tintColor = UIColor.systemGreen
             case .read:
-                personIcon.image = UIImage(systemName: "person.fill")
-                dateIcon.image = UIImage(systemName: "person.fill")
-                addressIcon.image = UIImage(systemName: "map.fill")
+                personIcon.tintColor = UIColor.systemBlue
+                dateIcon.tintColor = UIColor.systemBlue
+                addressIcon.tintColor = UIColor.systemBlue
             case .unread:
-                personIcon.image = UIImage(systemName: "person")
-                dateIcon.image = UIImage(systemName: "person")
-                addressIcon.image = UIImage(systemName: "map")
+                personIcon.tintColor = UIColor.systemGray
+                dateIcon.tintColor = UIColor.systemGray
+                addressIcon.tintColor = UIColor.systemGray
             }
 
             let dateFormatter = DateFormatter()
@@ -68,10 +69,4 @@ class JobOffersTableViewCell: UITableViewCell {
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
 }

@@ -73,7 +73,7 @@ extension Offers {
     
     // MARK: - Gets offers list
 
-    static func loadOffers(url: String) async -> Offers? {
+    static func load(_ url: String) async -> Offers? {
         guard var components = URLComponents(string: url) else {
             return nil
         }

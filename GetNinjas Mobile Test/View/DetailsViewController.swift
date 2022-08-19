@@ -9,24 +9,18 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
-    //@IBOutlet weak var navigationItem: UINavigationItem!
-    
+    //MARK: - Properties
+    var detailViewModel: DetailsViewModel?
+
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //navigationItem.titleView?.backgroundColor = UIColor.white
-        navigationItem.titleView?.backgroundColor = UIColor.white
+//        jobOffersTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
+//        jobOffersTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
+//        jobOffersTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
+//        jobOffersTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
+//        jobOffersTableView.dataSource = detailViewModel
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

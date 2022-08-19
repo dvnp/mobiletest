@@ -117,7 +117,7 @@ extension OfferInfo {
     
     // MARK: - Gets offer info
 
-    static func loadLeads(url: String) async -> OfferInfo? {
+    static func load(_ url: String) async -> OfferInfo? {
         guard var components = URLComponents(string: url) else {
             return nil
         }
