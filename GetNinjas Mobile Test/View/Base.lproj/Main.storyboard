@@ -92,7 +92,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
                                                     <color key="baseForegroundColor" systemColor="systemGrayColor"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
@@ -116,7 +116,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>

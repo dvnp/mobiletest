@@ -42,8 +42,18 @@ class DetailsViewController: UIViewController {
         
         listTableView.dataSource = detailViewModel
         if detailViewModel?.detailType == .lead {
-            leftButton.isHidden = true
-            rightButton.isHidden = true
+            var configuration = UIButton.Configuration.plain()
+            var container = AttributeContainer()
+            container.font = UIFont.boldSystemFont(ofSize: 25)
+            configuration.attributedTitle = AttributedString("LIGAR", attributes: container)
+            configuration.image = UIImage(systemName: "phone.fill")
+            configuration.baseBackgroundColor = UIColor.systemGray
+            configuration.baseForegroundColor = UIColor.systemBlue
+            configuration.imagePadding = 15.0
+            leftButton.configuration = configuration
+            configuration.attributedTitle = AttributedString("WHATSAPP", attributes: container)
+            configuration.image = UIImage(systemName: "message.fill")
+            rightButton.configuration = configuration
         }
     }
 
@@ -59,4 +69,3 @@ class DetailsViewController: UIViewController {
         }
     }
 }
-
