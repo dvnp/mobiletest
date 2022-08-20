@@ -21,12 +21,13 @@ class TitleDetailsTableViewCell: UITableViewCell {
             guard let item = item as? TitleDetailsViewModelItem else {
                 return
             }
+            contentView.backgroundColor = UIColor.systemBlue
 
             titleLabel.text = item.title
             nameLabel.text = item.name
             addressLabel.text = String("\(item.neighborhood) - \(item.city)")
             distanceLabel.text = "a 10Km de você"
-            switch item.typeDetails {
+            switch item.detailType {
             case .offer:
                 personIcon.tintColor = UIColor.systemBlue
                 addressIcon.tintColor = UIColor.systemBlue

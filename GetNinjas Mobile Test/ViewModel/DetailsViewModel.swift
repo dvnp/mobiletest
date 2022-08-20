@@ -19,15 +19,18 @@ enum DetailsViewModelItemType {
 }
 
 protocol DetailsViewModelItem {
-    var type: DetailsViewModelItemType { get }
+    var itemType: DetailsViewModelItemType { get }
     var rowCount: Int { get }
-    var typeDetails: DetailsViewModelType { get }
+    var detailType: DetailsViewModelType { get }
 }
 
 class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
+    var detailType: DetailsViewModelType
+    var offers: OfferInfo?
 
     init(url: String, type: DetailsViewModelType) {
+        self.detailType = type
         super.init()
 
         Task {
@@ -35,24 +38,42 @@ class DetailsViewModel: NSObject {
             switch type {
             case .offer:
                 info = await OfferInfo.load(url)
+                if let offers = info as? OfferInfo {
+                    self.offers = offers
+                }
             case .lead:
                 info = await LeadInfo.load(url)
             }
 
             if let info = info {
-                items.append(MapDetailsViewModelItem(info: info, type: type))
+                //items.append(MapDetailsViewModelItem(info: info, type: type))
                 items.append(TitleDetailsViewModelItem(info: info, type: type))
                 items.append(InfoDetailsViewModelItem(info: info, type: type))
                 items.append(ContactDetailsViewModelItem(info: info, type: type))
             }
         }
     }
+
+    func offerLinkAccepted() -> String? {
+        if let link = offers?.links.accept.href {
+            return link
+        }
+        return nil
+    }
+
+    func offerLinkRejected() -> String? {
+        if let link = offers?.links.reject.href {
+            return link
+        }
+        return nil
+    }
+
 }
 
 class MapDetailsViewModelItem: DetailsViewModelItem {
-    let type: DetailsViewModelItemType
+    let itemType: DetailsViewModelItemType
     let rowCount: Int
-    let typeDetails: DetailsViewModelType
+    let detailType: DetailsViewModelType
 
     let latitude: Double
     let longitude: Double
@@ -80,16 +101,16 @@ class MapDetailsViewModelItem: DetailsViewModelItem {
         }
         self.longitude = longitude
 
-        self.type = .map
+        self.itemType = .map
         self.rowCount = 1
-        self.typeDetails = type
+        self.detailType = type
     }
 }
 
 class TitleDetailsViewModelItem: DetailsViewModelItem {
-    let type: DetailsViewModelItemType
+    let itemType: DetailsViewModelItemType
     let rowCount: Int
-    let typeDetails: DetailsViewModelType
+    let detailType: DetailsViewModelType
 
     let title: String
     let name: String
@@ -165,9 +186,9 @@ class TitleDetailsViewModelItem: DetailsViewModelItem {
         }
         self.distance = distance
 
-        self.type = .title
+        self.itemType = .title
         self.rowCount = 1
-        self.typeDetails = type
+        self.detailType = type
     }
 }
 
@@ -184,9 +205,9 @@ struct InfoLabelValue {
 }
 
 class InfoDetailsViewModelItem: DetailsViewModelItem {
-    let type: DetailsViewModelItemType
+    let itemType: DetailsViewModelItemType
     let rowCount: Int
-    let typeDetails: DetailsViewModelType
+    let detailType: DetailsViewModelType
 
     let infoLabelValues: [InfoLabelValue]
 
@@ -216,16 +237,16 @@ class InfoDetailsViewModelItem: DetailsViewModelItem {
         }
         self.infoLabelValues = infoLabelValue
 
-        self.type = .info
+        self.itemType = .info
         self.rowCount = self.infoLabelValues.count
-        self.typeDetails = type
+        self.detailType = type
     }
 }
 
 class ContactDetailsViewModelItem: DetailsViewModelItem {
-    let type: DetailsViewModelItemType
+    let itemType: DetailsViewModelItemType
     let rowCount: Int
-    let typeDetails: DetailsViewModelType
+    let detailType: DetailsViewModelType
 
     let name: String
     let email: String
@@ -269,9 +290,9 @@ class ContactDetailsViewModelItem: DetailsViewModelItem {
         }
         self.phones = phones
 
-        self.type = .contact
+        self.itemType = .contact
         self.rowCount = 1
-        self.typeDetails = type
+        self.detailType = type
     }
 }
 
@@ -288,7 +309,7 @@ extension DetailsViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section]
 
-        switch item.type {
+        switch item.itemType {
         case .map:
             if let cell = tableView.dequeueReusableCell(withIdentifier: MapDetailsTableViewCell.identifier, for: indexPath) as? MapDetailsTableViewCell {
                 cell.item = item

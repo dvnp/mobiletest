@@ -21,6 +21,14 @@ class OffersViewModel: NSObject {
             offers = await Offers.load(entryPoint.links.offers.href)
         }
     }
+
+    func linkSelf(indexOffer: Int) -> String? {
+        if let offers = offers?.offers, !offers.isEmpty {
+            return indexOffer < offers.count ? offers[indexOffer].links.linksSelf.href : nil
+        }
+        return nil
+    }
+
 }
 
 extension OffersViewModel: UITableViewDataSource {

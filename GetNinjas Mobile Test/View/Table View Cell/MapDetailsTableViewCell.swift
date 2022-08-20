@@ -18,8 +18,8 @@ class MapDetailsTableViewCell: UITableViewCell {
                 return
             }
 
-            mapView.centerCoordinate.latitude = item.latitude
-            mapView.centerCoordinate.longitude = item.longitude
+            //mapView.centerCoordinate.latitude = item.latitude
+            //mapView.centerCoordinate.longitude = item.longitude
         }
     }
 

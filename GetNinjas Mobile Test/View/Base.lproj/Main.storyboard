@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,8 +52,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pedidos" id="VNm-lD-H7X"/>
                     <connections>
-                        <outlet property="jobOffersSegmentedControl" destination="cs7-YU-edD" id="cxN-xo-X5X"/>
-                        <outlet property="jobOffersTableView" destination="IB8-Xs-0Qs" id="Dr3-EH-baB"/>
+                        <outlet property="listTableView" destination="IB8-Xs-0Qs" id="Dr3-EH-baB"/>
+                        <outlet property="offersSegmentedControl" destination="cs7-YU-edD" id="cxN-xo-X5X"/>
                         <segue destination="JSP-KL-2g0" kind="show" identifier="detailsSegue" id="wqh-Ax-LIA"/>
                     </connections>
                 </viewController>
@@ -67,13 +68,75 @@
                     <view key="view" contentMode="scaleToFill" id="HGC-fz-Yn7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YTU-qm-stb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-XX-cKF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" systemColor="tintColor"/>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="wAp-Uk-qqr" userLabel="Buttons Stack View">
+                                        <rect key="frame" x="0.0" y="694" width="414" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpB-bf-6j1">
+                                                <rect key="frame" x="0.0" y="0.0" width="206" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="sW6-vo-o3b"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="RECUSAR" imagePadding="15">
+                                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
+                                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-yH-RpI">
+                                                <rect key="frame" x="208" y="0.0" width="206" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="Kyq-gD-AiN"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="ACEITAR" imagePadding="15">
+                                                    <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hm2-XX-cKF" secondAttribute="trailing" id="475-FO-Ukq"/>
+                                    <constraint firstAttribute="bottom" secondItem="wAp-Uk-qqr" secondAttribute="bottom" id="EAb-B8-On5"/>
+                                    <constraint firstItem="wAp-Uk-qqr" firstAttribute="centerX" secondItem="YTU-qm-stb" secondAttribute="centerX" id="O6h-hq-ESA"/>
+                                    <constraint firstItem="wAp-Uk-qqr" firstAttribute="leading" secondItem="YTU-qm-stb" secondAttribute="leading" id="S0M-Yv-zcv"/>
+                                    <constraint firstAttribute="trailing" secondItem="wAp-Uk-qqr" secondAttribute="trailing" id="WMO-Vr-tGH"/>
+                                    <constraint firstItem="wAp-Uk-qqr" firstAttribute="top" secondItem="hm2-XX-cKF" secondAttribute="bottom" id="ig3-IN-zPT"/>
+                                    <constraint firstItem="hm2-XX-cKF" firstAttribute="top" secondItem="YTU-qm-stb" secondAttribute="top" id="ikn-xx-O93"/>
+                                    <constraint firstItem="hm2-XX-cKF" firstAttribute="leading" secondItem="YTU-qm-stb" secondAttribute="leading" id="kqO-W9-Ckq"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="mHW-Ry-qA1"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mHW-Ry-qA1" firstAttribute="trailing" secondItem="YTU-qm-stb" secondAttribute="trailing" id="C8Y-ui-h8G"/>
+                            <constraint firstItem="YTU-qm-stb" firstAttribute="leading" secondItem="mHW-Ry-qA1" secondAttribute="leading" id="Qpt-Vu-mDc"/>
+                            <constraint firstItem="mHW-Ry-qA1" firstAttribute="bottom" secondItem="YTU-qm-stb" secondAttribute="bottom" id="cdM-Jy-EId"/>
+                            <constraint firstItem="YTU-qm-stb" firstAttribute="top" secondItem="mHW-Ry-qA1" secondAttribute="top" id="ece-eu-foV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="YLf-I6-lF9"/>
                     <connections>
+                        <outlet property="leftButton" destination="qpB-bf-6j1" id="5OT-w6-f3s"/>
+                        <outlet property="listTableView" destination="hm2-XX-cKF" id="ZSM-LP-nPa"/>
                         <outlet property="navigationItem" destination="YLf-I6-lF9" id="Ct4-63-xEn"/>
+                        <outlet property="rightButton" destination="MWv-yH-RpI" id="5vI-hE-XJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyU-r7-qaf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -124,7 +187,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>

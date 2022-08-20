@@ -12,30 +12,29 @@ class JobOffersViewController: UIViewController {
     //MARK: - Properties
     fileprivate let offersViewModel = OffersViewModel()
     fileprivate let leadsViewModel = LeadsViewModel()
+    fileprivate var detailsViewModel: DetailsViewModel?
     
     //MARK: - Outlets
-    @IBOutlet weak var jobOffersSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var jobOffersTableView: UITableView!
+    @IBOutlet weak var offersSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var listTableView: UITableView!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        jobOffersTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
-        jobOffersTableView.dataSource = offersViewModel
-        jobOffersTableView.delegate = self
+        listTableView.register(JobOffersTableViewCell.nib, forCellReuseIdentifier: JobOffersTableViewCell.identifier)
+        
+        listTableView.dataSource = offersViewModel
+        listTableView.delegate = self
     }
 
     @IBAction func segmentedControlActionChanged(_ sender: UISegmentedControl) {
-        jobOffersTableView.dataSource = sender.selectedSegmentIndex == 0 ? offersViewModel : leadsViewModel
-        jobOffersTableView.reloadData()
+        listTableView.dataSource = sender.selectedSegmentIndex == 0 ? offersViewModel : leadsViewModel
+        listTableView.reloadData()
     }
 
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if let destination = segue.destination as? DetailsViewController {
             let detailsViewModel = sender as? DetailsViewModel
             destination.detailViewModel = detailsViewModel
@@ -47,8 +46,16 @@ class JobOffersViewController: UIViewController {
 
 extension JobOffersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(jobOffersSegmentedControl.selectedSegmentIndex) -> \(indexPath.row)")
-        let detailsViewModel: Any? = nil//DetailsViewModel(url: "", type: .offer)
+        print("\(offersSegmentedControl.selectedSegmentIndex) -> \(indexPath.row)")
+        if let offersDataSource = listTableView.dataSource as? OffersViewModel,
+           let link = offersDataSource.linkSelf(indexOffer: indexPath.row) {
+            detailsViewModel = DetailsViewModel(url: link, type: .offer)
+            print("==> offersDataSource")
+        } else if let leadsDataSource = listTableView.dataSource as? LeadsViewModel,
+                  let link = leadsDataSource.linkSelf(indexOffer: indexPath.row) {
+            detailsViewModel = DetailsViewModel(url: link, type: .lead)
+            print("==> leadsDataSource")
+        }
         self.performSegue(withIdentifier: "detailsSegue", sender: detailsViewModel)
     }
 }

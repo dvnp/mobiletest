@@ -22,11 +22,11 @@ class ContactDetailsTableViewCell: UITableViewCell {
             guard let item = item as? ContactDetailsViewModelItem else {
                 return
             }
-
+            contentView.backgroundColor = UIColor.systemBlue
             contactLabel.text = item.name
             phoneLabel.text = item.phones[0]
             emailLabel.text = item.email
-            switch item.typeDetails {
+            switch item.detailType {
             case .offer:
                 contactView.backgroundColor = UIColor.systemCyan
                 phoneLabel.textColor = UIColor.white

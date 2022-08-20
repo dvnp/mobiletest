@@ -21,6 +21,14 @@ class LeadsViewModel: NSObject {
             leads = await Leads.load(entryPoint.links.leads.href)
         }
     }
+
+    func linkSelf(indexOffer: Int) -> String? {
+        if let leads = leads?.leads, !leads.isEmpty {
+            return indexOffer < leads.count ? leads[indexOffer].links.linksSelf.href : nil
+        }
+        return nil
+    }
+
 }
 
 extension LeadsViewModel: UITableViewDataSource {
