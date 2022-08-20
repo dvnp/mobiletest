@@ -58,9 +58,18 @@ extension JobOffersViewController: UITableViewDelegate {
 }
 
 extension JobOffersViewController: DetailsViewControllerDelegate {
-    func popViewRefresh() {
-        offersSegmentedControl.selectedSegmentIndex = 1
-        listTableView.dataSource = leadsViewModel
-        listTableView.reloadData()
+    func popViewRefresh(button: buttonId) {
+        if detailsViewModel?.detailType == .offer {
+            if (button == .left) {
+                offersSegmentedControl.selectedSegmentIndex = 0
+                listTableView.dataSource = offersViewModel
+                listTableView.reloadData()
+            } else {
+                if let link = detailsViewModel?.offerLinkAccepted() {
+                    detailsViewModel = DetailsViewModel(url: link, type: .lead)
+                    self.performSegue(withIdentifier: "detailsSegue", sender: detailsViewModel)
+                }
+            }
+        }
     }
 }

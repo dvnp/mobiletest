@@ -13,7 +13,7 @@ enum buttonId: Int {
 }
 
 protocol DetailsViewControllerDelegate: AnyObject {
-    func popViewRefresh()
+    func popViewRefresh(button: buttonId)
 }
 
 class DetailsViewController: UIViewController {
@@ -55,7 +55,7 @@ class DetailsViewController: UIViewController {
     @IBAction func optionButtonPressed(_ sender: UIButton) {
         if let navController = self.navigationController {
             navController.popViewController(animated: true)
-            self.delegate?.popViewRefresh()
+            self.delegate?.popViewRefresh(button: sender.tag == 0 ? .left : .right)
         }
     }
 }
