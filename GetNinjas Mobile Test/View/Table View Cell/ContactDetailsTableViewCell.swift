@@ -29,6 +29,7 @@ class ContactDetailsTableViewCell: UITableViewCell {
             switch item.detailType {
             case .offer:
                 contactView.backgroundColor = UIColor.systemCyan
+                contactLabel.textColor = UIColor.white
                 phoneLabel.textColor = UIColor.white
                 emailLabel.textColor = UIColor.white
                 phoneIcon.tintColor = UIColor.white
@@ -36,6 +37,7 @@ class ContactDetailsTableViewCell: UITableViewCell {
                 messageLabel.text = "Aceite o pedido para destravar o contato!"
             case .lead:
                 contactView.backgroundColor = UIColor.systemGreen
+                contactLabel.textColor = UIColor.black
                 phoneLabel.textColor = UIColor.black
                 emailLabel.textColor = UIColor.black
                 phoneIcon.tintColor = UIColor.black

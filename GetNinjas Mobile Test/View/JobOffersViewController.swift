@@ -38,24 +38,29 @@ class JobOffersViewController: UIViewController {
         if let destination = segue.destination as? DetailsViewController {
             let detailsViewModel = sender as? DetailsViewModel
             destination.detailViewModel = detailsViewModel
+            destination.delegate = self
         }
-
     }
 
 }
 
 extension JobOffersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(offersSegmentedControl.selectedSegmentIndex) -> \(indexPath.row)")
         if let offersDataSource = listTableView.dataSource as? OffersViewModel,
            let link = offersDataSource.linkSelf(indexOffer: indexPath.row) {
             detailsViewModel = DetailsViewModel(url: link, type: .offer)
-            print("==> offersDataSource")
         } else if let leadsDataSource = listTableView.dataSource as? LeadsViewModel,
                   let link = leadsDataSource.linkSelf(indexOffer: indexPath.row) {
             detailsViewModel = DetailsViewModel(url: link, type: .lead)
-            print("==> leadsDataSource")
         }
         self.performSegue(withIdentifier: "detailsSegue", sender: detailsViewModel)
+    }
+}
+
+extension JobOffersViewController: DetailsViewControllerDelegate {
+    func popViewRefresh() {
+        offersSegmentedControl.selectedSegmentIndex = 1
+        listTableView.dataSource = leadsViewModel
+        listTableView.reloadData()
     }
 }

@@ -32,8 +32,8 @@ class TitleDetailsTableViewCell: UITableViewCell {
                 personIcon.tintColor = UIColor.systemBlue
                 addressIcon.tintColor = UIColor.systemBlue
             case .lead:
-                personIcon.tintColor = UIColor.systemGray
-                addressIcon.tintColor = UIColor.systemGray
+                personIcon.tintColor = UIColor.systemGreen
+                addressIcon.tintColor = UIColor.systemGreen
             }
         }
     }

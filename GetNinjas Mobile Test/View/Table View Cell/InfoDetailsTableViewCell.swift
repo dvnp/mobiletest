@@ -25,7 +25,7 @@ class InfoDetailsTableViewCell: UITableViewCell {
             case .offer:
                 infoIcon.tintColor = UIColor.systemBlue
             case .lead:
-                infoIcon.tintColor = UIColor.systemGray
+                infoIcon.tintColor = UIColor.systemGreen
             }
         }
     }
