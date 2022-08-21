@@ -36,13 +36,19 @@
                                     <action selector="segmentedControlActionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2jp-GP-2TM"/>
                                 </connections>
                             </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="rMW-cS-DYw">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="labelColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="cs7-YU-edD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0lD-s1-qli"/>
                             <constraint firstItem="IB8-Xs-0Qs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8NC-m1-m92"/>
+                            <constraint firstItem="rMW-cS-DYw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EY4-9v-uoq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IB8-Xs-0Qs" secondAttribute="trailing" id="Gyc-DK-ZRa"/>
+                            <constraint firstItem="rMW-cS-DYw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N0Q-nk-sSm"/>
                             <constraint firstItem="IB8-Xs-0Qs" firstAttribute="top" secondItem="cs7-YU-edD" secondAttribute="bottom" id="Q46-E3-3ET"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IB8-Xs-0Qs" secondAttribute="bottom" id="enA-f3-KmS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cs7-YU-edD" secondAttribute="trailingMargin" constant="30" id="wY8-Da-4De"/>
@@ -51,6 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pedidos" id="VNm-lD-H7X"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="rMW-cS-DYw" id="J1z-F0-EhR"/>
                         <outlet property="listTableView" destination="IB8-Xs-0Qs" id="Dr3-EH-baB"/>
                         <outlet property="offersSegmentedControl" destination="cs7-YU-edD" id="cxN-xo-X5X"/>
                         <segue destination="JSP-KL-2g0" kind="show" identifier="detailsSegue" id="wqh-Ax-LIA"/>
@@ -58,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="38"/>
+            <point key="canvasLocation" x="637.68115942028987" y="37.5"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="L6q-XD-UMF">
@@ -143,6 +150,7 @@
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-vb-mMw">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="tintColor" systemColor="systemBlueColor"/>
                                 <color key="color" systemColor="labelColor"/>
                             </activityIndicatorView>
                         </subviews>

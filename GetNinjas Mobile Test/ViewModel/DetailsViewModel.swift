@@ -24,14 +24,25 @@ protocol DetailsViewModelItem {
     var detailType: DetailsViewModelType { get }
 }
 
+protocol DetailsViewModelDelegate: AnyObject {
+    func detailsActivityIndicatorStart()
+    func detailsActivityIndicatorStop()
+}
+
 class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItem]()
     var detailType: DetailsViewModelType
     var offers: OfferInfo?
 
+    //MARK: - Properties
+    weak var delegate: DetailsViewModelDelegate?
+
     init(url: String, type: DetailsViewModelType) {
         self.detailType = type
         super.init()
+
+        let semaphore = DispatchSemaphore(value: 0)
+        self.delegate?.detailsActivityIndicatorStart()
 
         Task {
             var info: Codable?
@@ -51,8 +62,13 @@ class DetailsViewModel: NSObject {
                 items.append(InfoDetailsViewModelItem(info: info, type: type))
                 items.append(ContactDetailsViewModelItem(info: info, type: type))
             }
+            semaphore.signal()
         }
-    }
+
+        //TODO: improvement to a network timeout
+        semaphore.wait()
+        self.delegate?.detailsActivityIndicatorStop()
+   }
 
     func offerLinkAccepted() -> String? {
         if let link = offers?.links.accept.href {

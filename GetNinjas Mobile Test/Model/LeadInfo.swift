@@ -41,7 +41,7 @@ extension LeadInfo {
         do {
             let (data, _) = try await session.data(from: url)
 
-            let leadInfo = try? JSONDecoder().decode(self, from: data)
+            let leadInfo = try? JSONDecoder().decode(LeadInfo.self, from: data)
             return leadInfo
         } catch {
             print(error)

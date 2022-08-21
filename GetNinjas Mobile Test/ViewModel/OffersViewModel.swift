@@ -7,11 +7,22 @@
 
 import UIKit
 
+protocol OffersViewModelDelegate: AnyObject {
+    func offerActivityIndicatorStart()
+    func offerActivityIndicatorStop()
+}
+
 class OffersViewModel: NSObject {
     var offers: Offers?
+    
+    //MARK: - Properties
+    weak var delegate: OffersViewModelDelegate?
 
     override init() {
         super.init()
+
+        let semaphore = DispatchSemaphore(value: 0)
+        self.delegate?.offerActivityIndicatorStart()
 
         Task {
             guard let entryPoint = await Entrypoint.load() else {
@@ -19,7 +30,12 @@ class OffersViewModel: NSObject {
             }
             
             offers = await Offers.load(entryPoint.links.offers.href)
+
+            semaphore.signal()
         }
+        //TODO: improvement to a network timeout
+        semaphore.wait()
+        self.delegate?.offerActivityIndicatorStop()
     }
 
     func linkSelf(indexOffer: Int) -> String? {

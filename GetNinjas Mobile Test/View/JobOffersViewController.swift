@@ -17,7 +17,8 @@ class JobOffersViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var offersSegmentedControl: UISegmentedControl!
     @IBOutlet weak var listTableView: UITableView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class JobOffersViewController: UIViewController {
         
         listTableView.dataSource = offersViewModel
         listTableView.delegate = self
+
+        offersViewModel.delegate = self
+        leadsViewModel.delegate = self
     }
 
     @IBAction func segmentedControlActionChanged(_ sender: UISegmentedControl) {
@@ -58,18 +62,43 @@ extension JobOffersViewController: UITableViewDelegate {
 }
 
 extension JobOffersViewController: DetailsViewControllerDelegate {
-    func popViewRefresh(button: buttonId) {
-        if detailsViewModel?.detailType == .offer {
-            if (button == .left) {
-                offersSegmentedControl.selectedSegmentIndex = 0
-                listTableView.dataSource = offersViewModel
-                listTableView.reloadData()
-            } else {
-                if let link = detailsViewModel?.offerLinkAccepted() {
-                    detailsViewModel = DetailsViewModel(url: link, type: .lead)
-                    self.performSegue(withIdentifier: "detailsSegue", sender: detailsViewModel)
-                }
-            }
-        }
+    func popViewRefresh() {
+        //if detailsViewModel?.detailType == .offer {
+            offersSegmentedControl.selectedSegmentIndex = 0
+            listTableView.dataSource = offersViewModel
+            listTableView.reloadData()
+        //}
     }
+
+    func activityIndicatorStart() {
+        activityIndicator.startAnimating()
+    }
+
+    func activityIndicatorStop() {
+        activityIndicator.stopAnimating()
+    }
+}
+
+extension JobOffersViewController: OffersViewModelDelegate {
+
+    func offerActivityIndicatorStart() {
+        activityIndicator.startAnimating()
+    }
+
+    func offerActivityIndicatorStop() {
+        activityIndicator.stopAnimating()
+    }
+
+}
+
+extension JobOffersViewController: LeadsViewModelDelegate {
+
+    func leadsActivityIndicatorStart() {
+        activityIndicator.startAnimating()
+    }
+
+    func leadsActivityIndicatorStop() {
+        activityIndicator.stopAnimating()
+    }
+
 }
