@@ -2,7 +2,7 @@
 //  JobOffersViewController.swift
 //  GetNinjas Mobile Test
 //
-//  Created by Dio on 15/08/22.
+//  Created by Diogenes Pereira on 15/08/22.
 //
 
 import UIKit

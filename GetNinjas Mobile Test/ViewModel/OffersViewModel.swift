@@ -2,7 +2,7 @@
 //  OffersViewModel.swift
 //  GetNinjas Mobile Test
 //
-//  Created by Dio on 16/08/22.
+//  Created by Diogenes Pereira on 16/08/22.
 //
 
 import UIKit

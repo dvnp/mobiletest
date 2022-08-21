@@ -2,7 +2,7 @@
 //  DataViewModelItem.swift
 //  GetNinjas Mobile Test
 //
-//  Created by Dio on 17/08/22.
+//  Created by Diogenes Pereira on 17/08/22.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  InfoDetailsTableViewCell.swift
 //  GetNinjas Mobile Test
 //
-//  Created by Dio on 18/08/22.
+//  Created by Diogenes Pereira on 18/08/22.
 //
 
 import UIKit
