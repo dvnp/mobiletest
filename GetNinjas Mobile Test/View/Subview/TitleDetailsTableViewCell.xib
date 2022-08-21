@@ -37,27 +37,27 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dkw-LU-HJV" userLabel="Details Stack View">
-                                <rect key="frame" x="8" y="102" width="355" height="60"/>
+                                <rect key="frame" x="8" y="102" width="355" height="56"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TSg-iX-IWN" userLabel="Person Icon">
-                                        <rect key="frame" x="0.0" y="1.5" width="24" height="57"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="24" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="Gwb-5q-zUi"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4g-kQ-rXI" userLabel="Name Label">
-                                        <rect key="frame" x="34" y="0.0" width="321" height="60"/>
+                                        <rect key="frame" x="34" y="0.0" width="321" height="56"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="7Ld-jP-v9Y"/>
+                                    <constraint firstAttribute="height" constant="56" id="7Ld-jP-v9Y"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aig-Br-07N" userLabel="Address Stack View">
-                                <rect key="frame" x="8" y="162" width="355" height="60"/>
+                                <rect key="frame" x="8" y="158" width="355" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="251" image="map.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dww-To-BZZ" userLabel="Address Icon">
                                         <rect key="frame" x="0.0" y="20.5" width="24" height="18.5"/>
@@ -66,19 +66,19 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m2N-ix-g1T">
-                                        <rect key="frame" x="34" y="0.0" width="321" height="110"/>
+                                        <rect key="frame" x="34" y="0.0" width="321" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-9Q-SMG" userLabel="Address Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="321" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="321" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="cOD-ec-4eA"/>
+                                                    <constraint firstAttribute="height" constant="50" id="cOD-ec-4eA"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU1-SH-5zm" userLabel="Way Label">
-                                                <rect key="frame" x="0.0" y="60" width="321" height="50"/>
+                                                <rect key="frame" x="0.0" y="50" width="321" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="s55-5u-BfF"/>
                                                 </constraints>
@@ -94,7 +94,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlE-hg-bXW" userLabel="Line2 View">
-                                <rect key="frame" x="8" y="244" width="355" height="2"/>
+                                <rect key="frame" x="8" y="243" width="355" height="2"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="TXL-1K-zIb"/>
@@ -108,7 +108,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="dlE-hg-bXW" secondAttribute="trailing" id="G7M-Me-JJ1"/>
                             <constraint firstAttribute="height" constant="245" id="JR4-tO-kbi"/>
                             <constraint firstItem="dkw-LU-HJV" firstAttribute="leading" secondItem="cIz-D3-nM0" secondAttribute="leadingMargin" id="N9A-Z1-1Z5"/>
-                            <constraint firstItem="dlE-hg-bXW" firstAttribute="top" secondItem="aig-Br-07N" secondAttribute="bottom" constant="22" id="Pck-tJ-cH9"/>
+                            <constraint firstItem="dlE-hg-bXW" firstAttribute="top" secondItem="aig-Br-07N" secondAttribute="bottom" constant="25" id="Pck-tJ-cH9"/>
                             <constraint firstItem="aig-Br-07N" firstAttribute="top" secondItem="dkw-LU-HJV" secondAttribute="bottom" id="U3y-F5-mi9"/>
                             <constraint firstItem="aig-Br-07N" firstAttribute="leading" secondItem="cIz-D3-nM0" secondAttribute="leadingMargin" id="WzG-CD-Tul"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aig-Br-07N" secondAttribute="trailing" id="cmM-Fn-ULR"/>
