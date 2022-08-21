@@ -58,7 +58,7 @@ class DetailsViewController: UIViewController {
         }
     }
 
-    func setLeadsButtonView() {
+    private func setLeadsButtonView() {
         var configuration = UIButton.Configuration.plain()
         var container = AttributeContainer()
         container.font = UIFont.boldSystemFont(ofSize: 25)
