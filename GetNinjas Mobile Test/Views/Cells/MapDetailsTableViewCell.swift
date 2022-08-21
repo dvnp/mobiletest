@@ -12,7 +12,7 @@ class MapDetailsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    var item: DetailsViewModelItem? {
+    var item: DetailsViewModelItemProperties? {
         didSet {
             guard let item = item as? MapDetailsViewModelItem else {
                 return

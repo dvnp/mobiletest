@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailsViewModel: NSObject {
-    var items = [DetailsViewModelItem]()
+    var items = [DetailsViewModelItemProperties]()
     var detailType: DetailsViewModelType
     var offers: OfferInfo?
 

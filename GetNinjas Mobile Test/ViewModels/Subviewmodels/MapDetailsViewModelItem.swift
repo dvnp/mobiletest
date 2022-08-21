@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MapDetailsViewModelItem: DetailsViewModelItem {
+class MapDetailsViewModelItem: DetailsViewModelItemProperties {
     let itemType: DetailsViewModelItemType
     let rowCount: Int
     let detailType: DetailsViewModelType

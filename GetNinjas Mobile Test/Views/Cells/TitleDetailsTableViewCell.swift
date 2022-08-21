@@ -16,7 +16,7 @@ class TitleDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
-    var item: DetailsViewModelItem? {
+    var item: DetailsViewModelItemProperties? {
         didSet {
             guard let item = item as? TitleDetailsViewModelItem else {
                 return

@@ -17,7 +17,7 @@ class ContactDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
-    var item: DetailsViewModelItem? {
+    var item: DetailsViewModelItemProperties? {
         didSet {
             guard let item = item as? ContactDetailsViewModelItem else {
                 return

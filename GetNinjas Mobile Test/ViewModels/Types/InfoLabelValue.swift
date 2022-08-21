@@ -11,10 +11,4 @@ struct InfoLabelValue {
     let label: String
     let value: [String]
     let type: DetailsViewModelType
-
-    init(label: String, value: [String], type: DetailsViewModelType) {
-        self.label = label
-        self.value = value
-        self.type = type
-    }
 }

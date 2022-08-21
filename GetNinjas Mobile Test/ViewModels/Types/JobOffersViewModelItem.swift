@@ -7,14 +7,8 @@
 
 import Foundation
 
-enum OffersState {
-    case accepted
-    case read
-    case unread
-}
-
 struct JobOffersViewModelItem {
-    var state: OffersState
+    var state: OffersStateType
     let title: String
     let createdAt: String
     let name: String
