@@ -174,7 +174,57 @@
 			path = "GetNinjas Mobile Test";
 			sourceTree = "<group>";
 		};
-		3AC2F16228AE7FD300274C75 /* Table View Cell */ = {
+		3A7F30CD28B242040081CD2A /* Submodel */ = {
+			isa = PBXGroup;
+			children = (
+				3A7F309F28B1DE460081CD2A /* Address.swift */,
+				3A7F308B28B1DBD90081CD2A /* AddressInfo.swift */,
+				3A7F309928B1DD8A0081CD2A /* Accept.swift */,
+				3A7F309D28B1DE190081CD2A /* Embedded.swift */,
+				3A7F308F28B1DC3D0081CD2A /* Info.swift */,
+				3A7F308928B1DB680081CD2A /* InfoEmbedded.swift */,
+				3A7F308D28B1DC130081CD2A /* Geolocation.swift */,
+				3A7F309B28B1DDEA0081CD2A /* Lead.swift */,
+				3AC2F14E28AE404900274C75 /* LeadInfo.swift */,
+				3A7F30B328B1E0B60081CD2A /* LeadsEntrypoint.swift */,
+				3A7F30A128B1DE680081CD2A /* LeadsRequest.swift */,
+				3A7F30A528B1DEEA0081CD2A /* Links.swift */,
+				3A7F30B128B1E07D0081CD2A /* LinksEntrypoint.swift */,
+				3A7F30A928B1DFC20081CD2A /* Offer.swift */,
+				3A7F30AB28B1DFDE0081CD2A /* OfferEmbedded.swift */,
+				3AC2F15028AE445300274C75 /* OfferInfo.swift */,
+				3A7F309728B1DD470081CD2A /* OfferLinks.swift */,
+				3A7F309528B1DCF40081CD2A /* Phone.swift */,
+				3A7F30AF28B1E04C0081CD2A /* RequestEmbedded.swift */,
+				3A7F30AD28B1DFFC0081CD2A /* Request.swift */,
+				3A7F30A728B1DF1E0081CD2A /* SelfClass.swift */,
+				3A7F30A328B1DEB90081CD2A /* User.swift */,
+				3A7F309328B1DCCF0081CD2A /* UserEmbedded.swift */,
+				3A7F309128B1DC7F0081CD2A /* UserInfo.swift */,
+			);
+			path = Submodel;
+			sourceTree = "<group>";
+		};
+		3A7F30CE28B244810081CD2A /* Subviewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				3AC2F14C28ADBA2500274C75 /* JobOffersViewModelItem.swift */,
+				3A7F30B728B1E2310081CD2A /* OffersViewModelDelegate.swift */,
+				3A7F30B928B1E2680081CD2A /* LeadsViewModelDelegate.swift */,
+				3A7F30CB28B1E6720081CD2A /* ContactDetailsViewModelItem.swift */,
+				3A7F30C928B1E5A40081CD2A /* InfoDetailsViewModelItem.swift */,
+				3A7F30C728B1E5600081CD2A /* InfoLabelValue.swift */,
+				3A7F30C528B1E4AE0081CD2A /* TitleDetailsViewModelItem.swift */,
+				3A7F30C328B1E45B0081CD2A /* MapDetailsViewModelItem.swift */,
+				3A7F30C128B1E41D0081CD2A /* DetailsViewModelDelegate.swift */,
+				3A7F30BF28B1E3DF0081CD2A /* DetailsViewModelItem.swift */,
+				3A7F30BD28B1E3680081CD2A /* DetailsViewModelItemType.swift */,
+				3A7F30BB28B1E33D0081CD2A /* DetailsViewModelType.swift */,
+			);
+			path = Subviewmodel;
+			sourceTree = "<group>";
+		};
+		3AC2F16228AE7FD300274C75 /* Subview */ = {
 			isa = PBXGroup;
 			children = (
 				3AEDB3B628ABCC360092C455 /* JobOffersTableViewCell.swift */,
@@ -188,39 +238,16 @@
 				3AC2F15E28AE7E1B00274C75 /* ContactDetailsTableViewCell.swift */,
 				3AC2F15F28AE7E1B00274C75 /* ContactDetailsTableViewCell.xib */,
 			);
-			path = "Table View Cell";
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		3AEDB3B128ABB8330092C455 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3AC2F14628AC7AE200274C75 /* Entrypoint.swift */,
-				3A7F30B328B1E0B60081CD2A /* LeadsEntrypoint.swift */,
-				3A7F30B128B1E07D0081CD2A /* LinksEntrypoint.swift */,
 				3AC2F14428AC6F1900274C75 /* Offers.swift */,
-				3A7F30AF28B1E04C0081CD2A /* RequestEmbedded.swift */,
-				3A7F30AD28B1DFFC0081CD2A /* Request.swift */,
-				3A7F30AB28B1DFDE0081CD2A /* OfferEmbedded.swift */,
-				3A7F30A928B1DFC20081CD2A /* Offer.swift */,
-				3A7F30A728B1DF1E0081CD2A /* SelfClass.swift */,
-				3A7F30A528B1DEEA0081CD2A /* Links.swift */,
 				3AC2F14828AC7CB800274C75 /* Leads.swift */,
-				3A7F30A328B1DEB90081CD2A /* User.swift */,
-				3A7F30A128B1DE680081CD2A /* LeadsRequest.swift */,
-				3A7F309F28B1DE460081CD2A /* Address.swift */,
-				3A7F309D28B1DE190081CD2A /* Embedded.swift */,
-				3A7F309B28B1DDEA0081CD2A /* Lead.swift */,
-				3AC2F15028AE445300274C75 /* OfferInfo.swift */,
-				3A7F309928B1DD8A0081CD2A /* Accept.swift */,
-				3A7F309728B1DD470081CD2A /* OfferLinks.swift */,
-				3A7F309528B1DCF40081CD2A /* Phone.swift */,
-				3A7F309328B1DCCF0081CD2A /* UserEmbedded.swift */,
-				3A7F309128B1DC7F0081CD2A /* UserInfo.swift */,
-				3A7F308F28B1DC3D0081CD2A /* Info.swift */,
-				3A7F308D28B1DC130081CD2A /* Geolocation.swift */,
-				3A7F308B28B1DBD90081CD2A /* AddressInfo.swift */,
-				3A7F308928B1DB680081CD2A /* InfoEmbedded.swift */,
-				3AC2F14E28AE404900274C75 /* LeadInfo.swift */,
+				3A7F30CD28B242040081CD2A /* Submodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,7 +259,7 @@
 				3AEDB3B428ABCA4F0092C455 /* DetailsViewController.swift */,
 				3A7F30B528B1E17F0081CD2A /* DetailsViewControllerDelegate.swift */,
 				3A79BF3E28AB3C8400E1BB41 /* Main.storyboard */,
-				3AC2F16228AE7FD300274C75 /* Table View Cell */,
+				3AC2F16228AE7FD300274C75 /* Subview */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,21 +267,10 @@
 		3AEDB3B328ABB8590092C455 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3AC2F14C28ADBA2500274C75 /* JobOffersViewModelItem.swift */,
 				3AC2F14228AC6BC700274C75 /* OffersViewModel.swift */,
-				3A7F30B728B1E2310081CD2A /* OffersViewModelDelegate.swift */,
 				3AC2F14A28ADB2D400274C75 /* LeadsViewModel.swift */,
-				3A7F30B928B1E2680081CD2A /* LeadsViewModelDelegate.swift */,
 				3AC2F16328AEBFA700274C75 /* DetailsViewModel.swift */,
-				3A7F30CB28B1E6720081CD2A /* ContactDetailsViewModelItem.swift */,
-				3A7F30C928B1E5A40081CD2A /* InfoDetailsViewModelItem.swift */,
-				3A7F30C728B1E5600081CD2A /* InfoLabelValue.swift */,
-				3A7F30C528B1E4AE0081CD2A /* TitleDetailsViewModelItem.swift */,
-				3A7F30C328B1E45B0081CD2A /* MapDetailsViewModelItem.swift */,
-				3A7F30C128B1E41D0081CD2A /* DetailsViewModelDelegate.swift */,
-				3A7F30BF28B1E3DF0081CD2A /* DetailsViewModelItem.swift */,
-				3A7F30BD28B1E3680081CD2A /* DetailsViewModelItemType.swift */,
-				3A7F30BB28B1E33D0081CD2A /* DetailsViewModelType.swift */,
+				3A7F30CE28B244810081CD2A /* Subviewmodel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
