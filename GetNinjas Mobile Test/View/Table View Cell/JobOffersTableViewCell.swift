@@ -23,8 +23,6 @@ class JobOffersTableViewCell: UITableViewCell {
             containerView.layer.shadowOpacity = 0.5
             containerView.layer.shadowRadius = 2.5
             containerView.layer.shadowOffset = CGSize(width: 2, height: 2)
-
-            contentView.backgroundColor = UIColor.systemCyan
         }
     }
     

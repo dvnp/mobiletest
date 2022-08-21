@@ -37,7 +37,7 @@ class JobOffersViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailsViewController {
             let detailsViewModel = sender as? DetailsViewModel
-            destination.detailViewModel = detailsViewModel
+            destination.detailsViewModel = detailsViewModel
             destination.delegate = self
         }
     }

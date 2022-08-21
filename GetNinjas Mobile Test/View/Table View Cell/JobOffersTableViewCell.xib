@@ -124,6 +124,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.1855918926" green="0.58463318819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="gO1-lr-jAR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="43D-Vy-228"/>
                     <constraint firstItem="gO1-lr-jAR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="IcL-ih-zId"/>
@@ -132,6 +133,8 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="QAG-zc-DJF"/>
+            <color key="backgroundColor" red="0.18431372549019609" green="0.58431372549019611" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.1855918926" green="0.58463318819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="addressIcon" destination="bqr-7N-85Y" id="UR6-FJ-unY"/>
                 <outlet property="addressLabel" destination="JMk-ED-syG" id="Izy-xB-NWk"/>

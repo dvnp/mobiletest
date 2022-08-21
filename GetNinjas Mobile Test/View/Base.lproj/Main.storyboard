@@ -19,8 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IB8-Xs-0Qs">
                                 <rect key="frame" x="0.0" y="202" width="414" height="660"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" red="0.1855918926" green="0.58463318819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-YU-edD">
                                 <rect key="frame" x="22" y="142" width="370" height="61"/>
@@ -74,7 +73,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-XX-cKF">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.18431372549019609" green="0.58431372549019611" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="sectionIndexBackgroundColor" systemColor="tintColor"/>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="wAp-Uk-qqr" userLabel="Buttons Stack View">
@@ -142,6 +141,10 @@
                                     <constraint firstItem="hm2-XX-cKF" firstAttribute="leading" secondItem="YTU-qm-stb" secondAttribute="leading" id="kqO-W9-Ckq"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NKQ-vb-mMw">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="labelColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mHW-Ry-qA1"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -149,12 +152,15 @@
                         <constraints>
                             <constraint firstItem="mHW-Ry-qA1" firstAttribute="trailing" secondItem="YTU-qm-stb" secondAttribute="trailing" id="C8Y-ui-h8G"/>
                             <constraint firstItem="YTU-qm-stb" firstAttribute="leading" secondItem="mHW-Ry-qA1" secondAttribute="leading" id="Qpt-Vu-mDc"/>
+                            <constraint firstItem="NKQ-vb-mMw" firstAttribute="centerX" secondItem="HGC-fz-Yn7" secondAttribute="centerX" id="W1B-fe-8eA"/>
                             <constraint firstItem="mHW-Ry-qA1" firstAttribute="bottom" secondItem="YTU-qm-stb" secondAttribute="bottom" id="cdM-Jy-EId"/>
                             <constraint firstItem="YTU-qm-stb" firstAttribute="top" secondItem="mHW-Ry-qA1" secondAttribute="top" id="ece-eu-foV"/>
+                            <constraint firstItem="NKQ-vb-mMw" firstAttribute="centerY" secondItem="HGC-fz-Yn7" secondAttribute="centerY" id="qLr-Kd-7Hh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="YLf-I6-lF9"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="NKQ-vb-mMw" id="ASl-YY-9Mq"/>
                         <outlet property="leftButton" destination="qpB-bf-6j1" id="5OT-w6-f3s"/>
                         <outlet property="listTableView" destination="hm2-XX-cKF" id="ZSM-LP-nPa"/>
                         <outlet property="navigationItem" destination="YLf-I6-lF9" id="Ct4-63-xEn"/>
@@ -211,8 +217,8 @@
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

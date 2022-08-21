@@ -17,9 +17,8 @@ class MapDetailsTableViewCell: UITableViewCell {
             guard let item = item as? MapDetailsViewModelItem else {
                 return
             }
-
-            //mapView.centerCoordinate.latitude = item.latitude
-            //mapView.centerCoordinate.longitude = item.longitude
+            mapView.centerCoordinate.latitude = item.latitude
+            mapView.centerCoordinate.longitude = item.longitude
         }
     }
 

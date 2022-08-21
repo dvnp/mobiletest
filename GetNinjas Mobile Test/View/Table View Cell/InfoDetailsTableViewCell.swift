@@ -18,7 +18,6 @@ class InfoDetailsTableViewCell: UITableViewCell {
             guard let item = item else {
                 return
             }
-            contentView.backgroundColor = UIColor.systemBlue
             infoLabel.text = item.label
             valueLabel.text = item.value.joined(separator: ", ")
             switch item.type {

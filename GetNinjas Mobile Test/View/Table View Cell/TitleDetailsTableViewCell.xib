@@ -66,10 +66,10 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m2N-ix-g1T">
-                                        <rect key="frame" x="34" y="0.0" width="337" height="84"/>
+                                        <rect key="frame" x="34" y="0.0" width="337" height="74"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-9Q-SMG" userLabel="Address Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="337" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="337" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="cOD-ec-4eA"/>
                                                 </constraints>
@@ -78,7 +78,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DU1-SH-5zm" userLabel="Way Label">
-                                                <rect key="frame" x="0.0" y="60" width="337" height="24"/>
+                                                <rect key="frame" x="0.0" y="24" width="337" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="s55-5u-BfF"/>
                                                 </constraints>
@@ -123,6 +123,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.18431372549019609" green="0.58431372549019611" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="cIz-D3-nM0" secondAttribute="bottom" id="5XC-be-Tzq"/>
                     <constraint firstAttribute="trailingMargin" secondItem="cIz-D3-nM0" secondAttribute="trailing" id="TKV-jZ-ihc"/>

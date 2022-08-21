@@ -21,8 +21,6 @@ class TitleDetailsTableViewCell: UITableViewCell {
             guard let item = item as? TitleDetailsViewModelItem else {
                 return
             }
-            contentView.backgroundColor = UIColor.systemBlue
-
             titleLabel.text = item.title
             nameLabel.text = item.name
             addressLabel.text = String("\(item.neighborhood) - \(item.city)")

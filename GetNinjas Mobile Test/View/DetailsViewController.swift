@@ -21,27 +21,26 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     //MARK: - Properties
-    var detailViewModel: DetailsViewModel?
+    var detailsViewModel: DetailsViewModel?
     weak var delegate: DetailsViewControllerDelegate?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationItem.title = ""
 
         leftButton.tag = 0
         rightButton.tag = 1
         
-        //listTableView.register(MapDetailsTableViewCell.nib, forCellReuseIdentifier: MapDetailsTableViewCell.identifier)
+        listTableView.register(MapDetailsTableViewCell.nib, forCellReuseIdentifier: MapDetailsTableViewCell.identifier)
         listTableView.register(TitleDetailsTableViewCell.nib, forCellReuseIdentifier: TitleDetailsTableViewCell.identifier)
         listTableView.register(InfoDetailsTableViewCell.nib, forCellReuseIdentifier: InfoDetailsTableViewCell.identifier)
         listTableView.register(ContactDetailsTableViewCell.nib, forCellReuseIdentifier: ContactDetailsTableViewCell.identifier)
         
-        listTableView.dataSource = detailViewModel
-        if detailViewModel?.detailType == .lead {
+        listTableView.dataSource = detailsViewModel
+        if detailsViewModel?.detailType == .lead {
             var configuration = UIButton.Configuration.plain()
             var container = AttributeContainer()
             container.font = UIFont.boldSystemFont(ofSize: 25)
@@ -57,13 +56,8 @@ class DetailsViewController: UIViewController {
         }
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-
     @IBAction func optionButtonPressed(_ sender: UIButton) {
-        if let navController = self.navigationController {
+        if detailsViewModel?.detailType == .offer, let navController = self.navigationController {
             navController.popViewController(animated: true)
             self.delegate?.popViewRefresh(button: sender.tag == 0 ? .left : .right)
         }

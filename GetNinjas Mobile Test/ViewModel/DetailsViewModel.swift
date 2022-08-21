@@ -46,7 +46,7 @@ class DetailsViewModel: NSObject {
             }
 
             if let info = info {
-                //items.append(MapDetailsViewModelItem(info: info, type: type))
+                items.append(MapDetailsViewModelItem(info: info, type: type))
                 items.append(TitleDetailsViewModelItem(info: info, type: type))
                 items.append(InfoDetailsViewModelItem(info: info, type: type))
                 items.append(ContactDetailsViewModelItem(info: info, type: type))
