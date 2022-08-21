@@ -16,16 +16,6 @@ struct Entrypoint: Codable {
     }
 }
 
-// MARK: - Links
-struct LinksEntrypoint: Codable {
-    let leads, offers: LeadsEntrypoint
-}
-
-// MARK: - LeadsEntryPoint
-struct LeadsEntrypoint: Codable {
-    let href: String
-}
-
 extension Entrypoint {
     
     // MARK: - The entrypoint URI

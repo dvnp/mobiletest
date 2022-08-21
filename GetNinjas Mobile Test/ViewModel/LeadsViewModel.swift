@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol LeadsViewModelDelegate: AnyObject {
-    func leadsActivityIndicatorStart()
-    func leadsActivityIndicatorStop()
-}
-
 class LeadsViewModel: NSObject {
     var leads: Leads?
 

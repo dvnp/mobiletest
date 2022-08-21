@@ -18,57 +18,6 @@ struct Offers: Codable {
     }
 }
 
-// MARK: - Links
-struct Links: Codable {
-    let linksSelf: SelfClass
-
-    enum CodingKeys: String, CodingKey {
-        case linksSelf = "self"
-    }
-}
-
-// MARK: - SelfClass
-struct SelfClass: Codable {
-    let href: String
-}
-
-// MARK: - Offer
-struct Offer: Codable {
-    let state: String
-    let embedded: OfferEmbedded
-    let links: Links
-
-    enum CodingKeys: String, CodingKey {
-        case state
-        case embedded = "_embedded"
-        case links = "_links"
-    }
-}
-
-// MARK: - OfferEmbedded
-struct OfferEmbedded: Codable {
-    let request: Request
-}
-
-// MARK: - Request
-struct Request: Codable {
-    let createdAt: String
-    let title: String
-    let embedded: RequestEmbedded
-
-    enum CodingKeys: String, CodingKey {
-        case createdAt = "created_at"
-        case title
-        case embedded = "_embedded"
-    }
-}
-
-// MARK: - RequestEmbedded
-struct RequestEmbedded: Codable {
-    let user: User
-    let address: Address
-}
-
 extension Offers {
     
     // MARK: - Gets offers list

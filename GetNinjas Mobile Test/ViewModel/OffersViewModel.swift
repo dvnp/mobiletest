@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol OffersViewModelDelegate: AnyObject {
-    func offerActivityIndicatorStart()
-    func offerActivityIndicatorStop()
-}
-
 class OffersViewModel: NSObject {
     var offers: Offers?
     

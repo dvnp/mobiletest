@@ -18,45 +18,6 @@ struct Leads: Codable {
     }
 }
 
-// MARK: - Lead
-struct Lead: Codable {
-    let createdAt: String
-    let embedded: Embedded
-    let links: Links
-
-    enum CodingKeys: String, CodingKey {
-        case createdAt = "created_at"
-        case embedded = "_embedded"
-        case links = "_links"
-    }
-}
-
-// MARK: - Embedded
-struct Embedded: Codable {
-    let address: Address
-    let user: User
-    let request: LeadsRequest
-}
-
-// MARK: - Address
-struct Address: Codable {
-    let city: String
-    let street: String?
-    let neighborhood: String
-    let uf: String
-}
-
-// MARK: - LeadsRequest
-struct LeadsRequest: Codable {
-    let title: String
-}
-
-// MARK: - User
-struct User: Codable {
-    let name: String
-    let email: String?
-}
-
 extension Leads {
     
     // MARK: - Gets leads list

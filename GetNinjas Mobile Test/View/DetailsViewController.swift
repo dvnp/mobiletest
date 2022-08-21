@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol DetailsViewControllerDelegate: AnyObject {
-    func popViewRefresh()
-    
-    func activityIndicatorStart()
-    func activityIndicatorStop()
-}
-
 class DetailsViewController: UIViewController {
     let left = 0
     let right = 1
@@ -40,18 +33,7 @@ class DetailsViewController: UIViewController {
         listTableView.register(ContactDetailsTableViewCell.nib, forCellReuseIdentifier: ContactDetailsTableViewCell.identifier)
         
         if detailsViewModel?.detailType == .lead {
-            var configuration = UIButton.Configuration.plain()
-            var container = AttributeContainer()
-            container.font = UIFont.boldSystemFont(ofSize: 25)
-            configuration.attributedTitle = AttributedString("LIGAR", attributes: container)
-            configuration.image = UIImage(systemName: "phone.fill")
-            configuration.baseBackgroundColor = UIColor.systemGray
-            configuration.baseForegroundColor = UIColor.systemBlue
-            configuration.imagePadding = 15.0
-            leftButton.configuration = configuration
-            configuration.attributedTitle = AttributedString("WHATSAPP", attributes: container)
-            configuration.image = UIImage(systemName: "message.fill")
-            rightButton.configuration = configuration
+            setLeadsButtonView()
         }
 
         listTableView.dataSource = detailsViewModel
@@ -65,18 +47,7 @@ class DetailsViewController: UIViewController {
             if sender.tag == right, let link = detailsViewModel?.offerLinkAccepted() {
                 detailsViewModel = DetailsViewModel(url: link, type: .lead)
                 if detailsViewModel?.detailType == .lead {
-                    var configuration = UIButton.Configuration.plain()
-                    var container = AttributeContainer()
-                    container.font = UIFont.boldSystemFont(ofSize: 25)
-                    configuration.attributedTitle = AttributedString("LIGAR", attributes: container)
-                    configuration.image = UIImage(systemName: "phone.fill")
-                    configuration.baseBackgroundColor = UIColor.systemGray
-                    configuration.baseForegroundColor = UIColor.systemBlue
-                    configuration.imagePadding = 15.0
-                    leftButton.configuration = configuration
-                    configuration.attributedTitle = AttributedString("WHATSAPP", attributes: container)
-                    configuration.image = UIImage(systemName: "message.fill")
-                    rightButton.configuration = configuration
+                    setLeadsButtonView()
                 }
                 listTableView.dataSource = detailsViewModel
                 listTableView.reloadData()
@@ -87,6 +58,20 @@ class DetailsViewController: UIViewController {
         }
     }
 
+    func setLeadsButtonView() {
+        var configuration = UIButton.Configuration.plain()
+        var container = AttributeContainer()
+        container.font = UIFont.boldSystemFont(ofSize: 25)
+        configuration.attributedTitle = AttributedString("LIGAR", attributes: container)
+        configuration.image = UIImage(systemName: "phone.fill")
+        configuration.baseBackgroundColor = UIColor.systemGray
+        configuration.baseForegroundColor = UIColor.systemBlue
+        configuration.imagePadding = 15.0
+        leftButton.configuration = configuration
+        configuration.attributedTitle = AttributedString("WHATSAPP", attributes: container)
+        configuration.image = UIImage(systemName: "message.fill")
+        rightButton.configuration = configuration
+    }
 }
 
 extension DetailsViewController: DetailsViewModelDelegate {
