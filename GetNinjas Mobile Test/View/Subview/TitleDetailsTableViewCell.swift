@@ -24,7 +24,7 @@ class TitleDetailsTableViewCell: UITableViewCell {
             titleLabel.text = item.title
             nameLabel.text = item.name
             addressLabel.text = String("\(item.neighborhood) - \(item.city)")
-            distanceLabel.text = "a 10Km de você"
+            distanceLabel.text = "a \(item.distance/1000)Km de você"
             switch item.detailType {
             case .offer:
                 personIcon.tintColor = UIColor.systemBlue
