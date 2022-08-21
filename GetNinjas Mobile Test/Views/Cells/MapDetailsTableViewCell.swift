@@ -11,14 +11,19 @@ import MapKit
 class MapDetailsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+
     var item: DetailsViewModelItemProperties? {
         didSet {
             guard let item = item as? MapDetailsViewModelItem else {
                 return
             }
-            mapView.centerCoordinate.latitude = item.latitude
-            mapView.centerCoordinate.longitude = item.longitude
+
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
+            mapView.addAnnotation(annotation)
+            
+            let viewRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
+            mapView.setRegion(viewRegion, animated: false)
         }
     }
 

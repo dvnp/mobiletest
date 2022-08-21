@@ -30,9 +30,9 @@ class MapDetailsViewModelItem: DetailsViewModelItemProperties {
         var longitude: Double  {
             var longitude = 0.0
             if let offer = info as? OfferInfo {
-                longitude = offer.embedded.address.geolocation.latitude
+                longitude = offer.embedded.address.geolocation.longitude
             } else if let lead = info as? LeadInfo {
-                longitude = lead.embedded.address.geolocation.latitude
+                longitude = lead.embedded.address.geolocation.longitude
             }
             return longitude
         }

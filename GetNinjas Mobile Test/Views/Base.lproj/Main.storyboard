@@ -170,7 +170,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="NKQ-vb-mMw" id="ASl-YY-9Mq"/>
                         <outlet property="leftButton" destination="qpB-bf-6j1" id="5OT-w6-f3s"/>
-                        <outlet property="listTableView" destination="hm2-XX-cKF" id="ZSM-LP-nPa"/>
+                        <outlet property="listTableView" destination="hm2-XX-cKF" id="CRZ-4U-TRU"/>
                         <outlet property="navigationItem" destination="YLf-I6-lF9" id="Ct4-63-xEn"/>
                         <outlet property="rightButton" destination="MWv-yH-RpI" id="5vI-hE-XJb"/>
                     </connections>
