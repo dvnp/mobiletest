@@ -33,6 +33,7 @@ class DetailsViewController: UIViewController {
         listTableView.register(ContactDetailsTableViewCell.nib, forCellReuseIdentifier: ContactDetailsTableViewCell.identifier)
         
         if detailsViewModel?.detailType == .lead {
+            navigationItem.title = detailsViewModel?.nameTitle
             setLeadsButtonView()
         }
 
@@ -47,6 +48,7 @@ class DetailsViewController: UIViewController {
             if sender.tag == right, let link = detailsViewModel?.offerLinkAccepted() {
                 detailsViewModel = DetailsViewModel(url: link, type: .lead)
                 if detailsViewModel?.detailType == .lead {
+                    navigationItem.title = detailsViewModel?.nameTitle
                     setLeadsButtonView()
                 }
                 listTableView.dataSource = detailsViewModel

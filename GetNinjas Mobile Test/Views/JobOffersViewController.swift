@@ -53,9 +53,11 @@ extension JobOffersViewController: UITableViewDelegate {
         if let offersDataSource = listTableView.dataSource as? OffersViewModel,
            let link = offersDataSource.linkSelf(indexOffer: indexPath.row) {
             detailsViewModel = DetailsViewModel(url: link, type: .offer)
+            navigationItem.backButtonTitle = "Oferta"
         } else if let leadsDataSource = listTableView.dataSource as? LeadsViewModel,
                   let link = leadsDataSource.linkSelf(indexOffer: indexPath.row) {
             detailsViewModel = DetailsViewModel(url: link, type: .lead)
+            navigationItem.backButtonTitle = ""
         }
         self.performSegue(withIdentifier: "detailsSegue", sender: detailsViewModel)
     }
@@ -63,11 +65,7 @@ extension JobOffersViewController: UITableViewDelegate {
 
 extension JobOffersViewController: DetailsViewControllerDelegate {
     func popViewRefresh() {
-        //if detailsViewModel?.detailType == .offer {
-            offersSegmentedControl.selectedSegmentIndex = 0
-            listTableView.dataSource = offersViewModel
-            listTableView.reloadData()
-        //}
+        //navigationItem.backButtonTitle = detailsViewModel?.detailType == .offer ? "Oferta" : ""
     }
 
     func activityIndicatorStart() {

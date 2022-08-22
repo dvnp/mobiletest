@@ -11,6 +11,7 @@ class DetailsViewModel: NSObject {
     var items = [DetailsViewModelItemProperties]()
     var detailType: DetailsViewModelType
     var offers: OfferInfo?
+    var nameTitle: String?
 
     //MARK: - Properties
     weak var delegate: DetailsViewModelDelegate?
@@ -35,6 +36,11 @@ class DetailsViewModel: NSObject {
             }
 
             if let info = info {
+                if let offer = info as? OfferInfo {
+                    nameTitle = offer.embedded.user.name
+                } else if let lead = info as? LeadInfo {
+                    nameTitle = lead.embedded.user.name
+                }
                 items.append(MapDetailsViewModelItem(info: info, type: type))
                 items.append(TitleDetailsViewModelItem(info: info, type: type))
                 items.append(InfoDetailsViewModelItem(info: info, type: type))
